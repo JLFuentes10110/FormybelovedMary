@@ -1,0 +1,105 @@
+.photo-section {
+  padding: 6rem 2rem;
+  background: #fff5f5;
+  z-index: 1;
+}
+
+.photo-intro {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #5a3030;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.photo-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.upload-zone {
+  border: 1.5px dashed #e8a0a0;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+.upload-zone:hover { border-color: #c0392b; background: #fff5f5; }
+
+.upload-icon { font-size: 3rem; animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+.upload-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #7b1a1a;
+}
+.upload-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #c0a0a0;
+  text-transform: uppercase;
+}
+
+.canvas-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.love-canvas {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border: 1px solid #f0d0d0;
+  display: block;
+}
+
+.zoom-controls {
+  width: 100%;
+  max-width: 500px;
+}
+.zoom-controls label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+.zoom-controls input[type=range] {
+  flex: 1;
+  accent-color: #c0392b;
+}
+
+.canvas-hint {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: #c0a0a0;
+  text-align: center;
+}
+
+.change-photo {
+  background: none;
+  border: 1px solid #e8a0a0;
+  color: #c0392b;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.change-photo:hover { background: #fff5f5; }
