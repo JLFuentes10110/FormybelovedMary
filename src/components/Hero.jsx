@@ -26,7 +26,7 @@ export default function Hero() {
         </p>
         <div className="hero-since">
           <span className="label">Together since</span>
-          <span className="date">October 2024</span>
+          <span className="date">October 2025</span>
         </div>
         <div className="scroll-hint">
           <div className="scroll-line" />

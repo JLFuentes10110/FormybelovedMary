@@ -1,105 +1,90 @@
 .photo-section {
-  padding: 6rem 2rem;
-  background: #fff5f5;
+  padding: 5rem 2rem 6rem;
+  background: #fdf8f8;
   z-index: 1;
+  text-align: center;
 }
 
-.photo-intro {
-  text-align: center;
+.photo-section .section-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: #5a3030;
-  line-height: 1.8;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: #c0a0a0;
+  letter-spacing: 0.04em;
   margin-bottom: 3rem;
-  font-style: italic;
 }
 
-.photo-container {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.upload-zone {
-  border: 1.5px dashed #e8a0a0;
-  padding: 5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: white;
-}
-.upload-zone:hover { border-color: #c0392b; background: #fff5f5; }
-
-.upload-icon { font-size: 3rem; animation: float 3s ease-in-out infinite; }
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-
-.upload-title {
+.photo-section .section-subtitle {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 300;
   font-style: italic;
-  color: #7b1a1a;
-}
-.upload-sub {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: #c0a0a0;
-  text-transform: uppercase;
+  color: #c0b0b0;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  margin-bottom: 0.4rem;
 }
 
-.canvas-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.love-canvas {
-  width: 100%;
+/* Portrait with image background showing through text */
+.portrait-text {
   max-width: 800px;
-  height: auto;
-  border: 1px solid #f0d0d0;
-  display: block;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  font-size: 12px;
+  line-height: 8px;
+  text-align: justify;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5px;
+  
+  /* The magic CSS trick - image shows through text */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: fadeInPortrait 1.2s ease-out;
 }
 
-.zoom-controls {
-  width: 100%;
-  max-width: 500px;
-}
-.zoom-controls label {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #c9a84c;
-}
-.zoom-controls input[type=range] {
-  flex: 1;
-  accent-color: #c0392b;
+@keyframes fadeInPortrait {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.canvas-hint {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  color: #c0a0a0;
-  text-align: center;
+@keyframes fadeInPortrait {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.change-photo {
-  background: none;
-  border: 1px solid #e8a0a0;
-  color: #c0392b;
-  padding: 0.5rem 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s;
+.portrait-text:hover {
+  filter: brightness(1.1);
 }
-.change-photo:hover { background: #fff5f5; }
+
+@media (max-width: 768px) {
+  .portrait-text {
+    font-size: 10px;
+    line-height: 6px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait-text {
+    font-size: 8px;
+    line-height: 5px;
+    padding: 1rem;
+  }
+}

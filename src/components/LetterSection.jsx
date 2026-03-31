@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import './LetterSection.css'
 
 const MARY_LETTER = `My Love,
@@ -34,9 +34,69 @@ Mary 💕`
 
 export default function LetterSection() {
   const [showing, setShowing] = useState(true)
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const [isDragging, setIsDragging] = useState(false)
+  const [startY, setStartY] = useState(0)
+  const sectionRef = useRef(null)
+  const letterBodyRef = useRef(null)
+  const letterContainerRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        setHasAnimated(true)
+      }
+    }, { threshold: 0.2 })
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [hasAnimated])
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true)
+    setStartY(e.clientY - (letterContainerRef.current?.scrollTop || 0))
+  }
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true)
+    setStartY(e.touches[0].clientY - (letterContainerRef.current?.scrollTop || 0))
+  }
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !letterContainerRef.current) return
+    const newScrollTop = e.clientY - startY
+    letterContainerRef.current.scrollTop = Math.max(0, -newScrollTop)
+  }
+
+  const handleTouchMove = (e) => {
+    if (!isDragging || !letterContainerRef.current) return
+    const newScrollTop = e.touches[0].clientY - startY
+    letterContainerRef.current.scrollTop = Math.max(0, -newScrollTop)
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseup', handleMouseUp)
+    document.addEventListener('touchmove', handleTouchMove)
+    document.addEventListener('touchend', handleMouseUp)
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+      document.removeEventListener('touchmove', handleTouchMove)
+      document.removeEventListener('touchend', handleMouseUp)
+    }
+  }, [isDragging, startY])
 
   return (
-    <section className="letter-section">
+    <section className={`letter-section ${hasAnimated ? 'visible' : ''}`} ref={sectionRef}>
       <p className="section-subtitle">Her words, preserved</p>
       <h2 className="section-title">Her letter to me</h2>
       <div className="divider">🌹</div>
@@ -48,10 +108,18 @@ export default function LetterSection() {
               <span className="letter-rose">🌹</span>
               <p className="letter-from">A letter from her heart</p>
             </div>
-            <div className="letter-body">
-              {MARY_LETTER.split('\n').map((line, i) => (
-                <p key={i} className="letter-line">{line || <br/>}</p>
-              ))}
+            <div 
+              className={`letter-container ${isDragging ? 'dragging' : ''}`}
+              ref={letterContainerRef}
+              onMouseDown={handleMouseDown}
+              onTouchStart={handleTouchStart}
+              style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            >
+              <div className="letter-body" ref={letterBodyRef}>
+                {MARY_LETTER.split('\n').map((line, i) => (
+                  <p key={i} className="letter-line">{line || <br/>}</p>
+                ))}
+              </div>
             </div>
             <div className="letter-seal">❤</div>
           </div>
