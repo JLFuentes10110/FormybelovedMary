@@ -24,25 +24,25 @@ const moments = [
     emoji: '🕯️',
     date: 'Something Real',
     title: 'The night I gave you all of me',
-    desc: 'I had kept that part of myself — quietly, carefully — for the right moment, the right person. And when it came to you, there was no question. In your arms I felt seen, whole, and safe. That night I swore, quietly and certainly, that you would be my first and my last.',
+    desc: 'I had kept that part of myself — quietly, carefully — for the right moment, the right person. And when it came to you, there was no question. She gave me all of her, and I gave her all of me. That night we both felt it — loved, wanted, and deeply cared for. Holding her, I felt something I had never felt before — seen, whole, and certain. That night I swore, quietly and certainly, that she would be my first and my last.',
   },
   {
     emoji: '⛪',
     date: 'Our First Date',
     title: 'Mass, then TOPS',
-    desc: 'We began the day the way we always wanted to — side by side in church, offering the morning to something bigger than ourselves. Then came TOPS, the city glittering below us, and the quiet joy of simply being together. It didn\'t feel like a beginning. It felt like something already written.',
+    desc: 'We began our first date the way we always wanted to — side by side in church, offering the night to something bigger than ourselves. Then came TOPS, the city glittering below us, and the quiet joy of simply being together. It didn\'t feel like a beginning. It felt like something already written.',
   },
   {
     emoji: '💑',
     date: 'One Month Ago',
     title: 'Officially yours',
-    desc: 'The day I got to call you mine — not just in feeling, but in truth. The simplest words, yet the most meaningful title I\'ve ever been given.',
+    desc: 'Every question she had carried, every doubt her mind had built — I answered them, one by one, with nothing but the truth. I told her it was all genuine. Every word, every moment, every feeling. And that day, with the most sincere part of me, I offered her my heart — and swore to love her, to take care of her, and to never leave her side.',
   },
   {
     emoji: '🌹',
     date: 'Today',
     title: 'Our first monthsary',
-    desc: 'One month of us — but it feels like a lifetime of choosing you, again and again. And if I had to start over, find you in another bus stop, another life — I would still choose you. Every time.',
+    desc: 'It wasn\'t always easy. There were ups and downs, days that tested us. But there were also moments so full of joy, so full of each other, that nothing else existed. We poured our utmost love into every second we had together — before distance came and changed the shape of us. The situation has grown rough, but that doesn\'t change what this is. We\'ll fight through it. Consider each other\'s feelings. Keep them close, always. And love each other — not just today, but forever.',
   },
 ]
 

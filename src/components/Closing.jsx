@@ -16,11 +16,6 @@ export default function Closing() {
   return (
     <section className="closing-section" ref={ref}>
       <div className={`closing-content ${visible ? 'visible' : ''}`}>
-        {/* <div className="rose-row">
-          {'🌹'.repeat(5).split('').map((r, i) => (
-            <span key={i} className="closing-rose" style={{ animationDelay: `${i * 0.2}s` }}>🌹</span>
-          ))}
-        </div> */}
         <h2 className="closing-title">Happy First Monthsary</h2>
         <p className="closing-sub">my love, my home, my everything</p>
         <div className="closing-vow">

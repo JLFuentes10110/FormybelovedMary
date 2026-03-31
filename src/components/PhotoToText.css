@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 .photo-section {
   padding: 5rem 2rem 6rem;
   background: #fdf8f8;
@@ -31,31 +33,28 @@
   max-width: 800px;
   margin: 2.5rem auto;
   padding: 2rem;
+
+  /* Dense but non-overlapping — line-height must be >= font-size.
+     12px / 14px gives a tight typeset block that fills the image well. */
   font-size: 12px;
-  line-height: 8px;
+  line-height: 14px;
+
   text-align: justify;
   font-family: 'Georgia', serif;
-  letter-spacing: 0.5px;
-  
-  /* The magic CSS trick - image shows through text */
+  letter-spacing: 0.3px;
+  word-spacing: 0.5px;
+
+  /* Image shows through text */
   background-size: cover;
-  background-position: center;
+  /* Nudge the background up slightly so faces land in the upper half of the text block */
+  background-position: center 20%;
   background-repeat: no-repeat;
   background-attachment: scroll;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  
-  animation: fadeInPortrait 1.2s ease-out;
-}
 
-@keyframes fadeInPortrait {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: fadeInPortrait 1.2s ease-out both;
 }
 
 @keyframes fadeInPortrait {
@@ -70,13 +69,13 @@
 }
 
 .portrait-text:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.15);
 }
 
 @media (max-width: 768px) {
   .portrait-text {
     font-size: 10px;
-    line-height: 6px;
+    line-height: 12px;
     padding: 1.5rem;
   }
 }
@@ -84,7 +83,7 @@
 @media (max-width: 480px) {
   .portrait-text {
     font-size: 8px;
-    line-height: 5px;
+    line-height: 10px;
     padding: 1rem;
   }
 }

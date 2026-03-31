@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
 .closing-section {
   min-height: 80vh;
   display: flex;
@@ -23,24 +25,32 @@
   transform: translateY(30px);
   transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.closing-content.visible { opacity: 1; transform: translateY(0); }
 
+.closing-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Rose row (uncomment in JSX to use) ──────────────── */
 .rose-row {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
+
 .closing-rose {
   font-size: 1.5rem;
   display: inline-block;
   animation: riseUp 1s ease both;
 }
+
 @keyframes riseUp {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ─── Title ────────────────────────────────────────────── */
 .closing-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.5rem, 7vw, 5rem);
@@ -51,6 +61,7 @@
   margin-bottom: 0.5rem;
 }
 
+/* ─── Subtitle ─────────────────────────────────────────── */
 .closing-sub {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.65rem;
@@ -60,6 +71,7 @@
   margin-bottom: 3rem;
 }
 
+/* ─── Vow ──────────────────────────────────────────────── */
 .closing-vow {
   font-family: 'Libre Baskerville', serif;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -75,9 +87,10 @@
   font-size: 1.1rem;
 }
 
+/* ─── Date badge ───────────────────────────────────────── */
 .closing-date {
   display: inline-block;
-  border: 1px solid rgba(201,168,76,0.3);
+  border: 1px solid rgba(201, 168, 76, 0.3);
   padding: 0.7rem 2rem;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.6rem;
