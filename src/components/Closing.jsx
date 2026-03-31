@@ -31,7 +31,7 @@ export default function Closing() {
           </p>
         </div>
         <div className="closing-date">
-          <span>October 2024 → Forever</span>
+          <span>October 2025 → Forever</span>
         </div>
       </div>
     </section>
